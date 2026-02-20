@@ -1,0 +1,47 @@
+Build a clean, professional portfolio website for a web developer named "Ahsan Wisal" 
+with 2 years of experience. Use a single HTML file with embedded CSS and JavaScript. 
+No frameworks, no build tools — just plain HTML/CSS/JS so it runs directly on Replit.
+
+DESIGN:
+- Dark theme with a dark background (#0f0f0f or #111111)
+- Accent color: use a subtle cyan or blue (#00bcd4 or #3b82f6) — NOT pink, NOT neon
+- Clean, minimal, professional layout — no over-the-top animations
+- Fully responsive (mobile + desktop)
+- Smooth scroll behavior
+- Subtle fade-in on scroll for sections
+
+SECTIONS (in this order):
+1. NAVBAR — fixed top, name on left, nav links on right (Home, About, Skills, Projects, Contact)
+
+2. HERO — profile photo on one side, text on other side. 
+   Name: "Ahsan Wisal"
+   Title: "Full Stack Web Developer"
+   Subtitle: "2 Years of Experience | Building modern web apps"
+   Two buttons: "View Projects" and "Contact Me"
+   NOTE: Add a placeholder <img> tag with id="profile-photo" so I can replace the src later.
+
+3. ABOUT — 3-4 lines about being a passionate full stack developer who builds 
+   scalable web applications with modern technologies.
+
+4. SKILLS — display as tag/badge style chips, grouped in two rows:
+   Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, 
+             Material UI, shadcn/ui
+   Backend: Node.js, NestJS, MongoDB, MySQL
+   Deployment: Vercel, Netlify
+
+5. PROJECTS — card grid (3 cards), each card has:
+   - Project title (placeholder: "Project One", "Project Two", "Project Three")
+   - Short description (2 lines)
+   - Tech stack tags
+   - Two buttons: "Live Demo" and "GitHub" (use # as href for now)
+
+6. CONTACT — simple section with email placeholder, 
+   and icon links for GitHub, LinkedIn (use # as href)
+
+7. FOOTER — "Built by Ahsan Wisal © 2025"
+
+CODE QUALITY:
+- Write clean, commented code
+- Use CSS variables for colors so I can easily change the theme
+- No external libraries except Google Fonts (use "Inter" font)
+- All sections should have proper id attributes for smooth scroll to work
