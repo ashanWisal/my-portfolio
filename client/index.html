@@ -291,17 +291,18 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 1.25rem;
-            padding: 2.5rem;
+            overflow: hidden;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -310,15 +311,69 @@
             box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
         }
 
+        .project-image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .project-image-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .project-info {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .project-role {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            background: var(--accent-glow);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            white-space: nowrap;
+        }
+
         .project-title {
             color: #ffffff;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
+            font-size: 1.5rem;
         }
 
         .project-desc {
-            margin-bottom: 2rem;
-            flex-grow: 1;
+            margin-bottom: 1.5rem;
             font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .project-tech {
@@ -326,27 +381,100 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 2rem;
+            margin-top: auto;
         }
 
         .project-tech span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            color: var(--accent-color);
-            background-color: var(--accent-glow);
+            color: #d1d5db;
+            background-color: #262626;
             padding: 0.35rem 0.85rem;
-            border-radius: 1rem;
-            letter-spacing: 0.02em;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
         }
 
-        .project-actions {
+        .project-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
             display: flex;
-            gap: 1rem;
+            opacity: 1;
         }
 
-        .project-actions a {
-            font-size: 0.85rem;
-            padding: 0.6rem 1.2rem;
-            flex: 1;
+        .modal-content {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            max-width: 600px;
+            width: 100%;
+            padding: 3rem;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #ffffff;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .modal-description {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .modal-tech-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        body.modal-open {
+            overflow: hidden;
         }
 
         /* Contact */
@@ -543,49 +671,84 @@
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <h3 class="project-title">Project One</h3>
-                    <p class="project-desc">A comprehensive dashboard for managing e-commerce sales, inventory, and customer analytics in real-time.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Tailwind</span>
-                        <span>Node.js</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">Live Demo</a>
-                        <a href="#" class="btn btn-outline">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">Project Two</h3>
-                    <p class="project-desc">An interactive social platform connecting developers, featuring real-time chat and code snippet sharing.</p>
-                    <div class="project-tech">
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">Live Demo</a>
-                        <a href="#" class="btn btn-outline">GitHub</a>
+                    <div class="project-image-placeholder">Project Screenshot</div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">AutyClaud</h3>
+                            <span class="project-role">Full Stack Developer</span>
+                        </div>
+                        <p class="project-desc">A modern web application built for managing and automating cloud-based workflows with an intuitive admin interface.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('AutyClaud', 'A modern web application built for managing and automating cloud-based workflows with an intuitive admin interface. This platform enables users to streamline their cloud operations, monitor performance metrics, and automate repetitive tasks through a sophisticated yet user-friendly dashboard environment.', 'React, TypeScript, Node.js, MongoDB, Tailwind CSS')">View Details</button>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3 class="project-title">Project Three</h3>
-                    <p class="project-desc">A task management tool designed for agile teams, offering kanban boards, time tracking, and reporting.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>NestJS</span>
-                        <span>MySQL</span>
+                    <div class="project-image-placeholder">Project Screenshot</div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">Stratum-X</h3>
+                            <span class="project-role">Frontend Developer</span>
+                        </div>
+                        <p class="project-desc">A data-driven admin panel designed for real-time monitoring, analytics, and user management at scale.</p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>NestJS</span>
+                            <span>MySQL</span>
+                            <span>Material UI</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('Stratum-X', 'A data-driven admin panel designed for real-time monitoring, analytics, and user management at scale. The application features high-performance data visualizations, complex filtering systems, and a responsive interface tailored for data analysts and system administrators.', 'Next.js, TypeScript, NestJS, MySQL, Material UI')">View Details</button>
                     </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">Live Demo</a>
-                        <a href="#" class="btn btn-outline">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder">Project Screenshot</div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">CodeUpScale</h3>
+                            <span class="project-role">Full Stack Developer</span>
+                        </div>
+                        <p class="project-desc">A developer-focused platform for code collaboration, project tracking, and scalable application deployment.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Tailwind CSS</span>
+                            <span>Vercel</span>
+                        </div>
+                        <button class="btn btn-primary project-btn" onclick="openProjectModal('CodeUpScale', 'A developer-focused platform for code collaboration, project tracking, and scalable application deployment. It provides a unified workspace for teams to coordinate efforts, manage version control integration, and automate their deployment pipelines with confidence.', 'React, Node.js, MongoDB, Tailwind CSS, Vercel')">View Details</button>
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- Project Modal -->
+        <div id="projectModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <h3 id="modalTitle" class="modal-title">Project Title</h3>
+                <div id="modalDescription" class="modal-description">
+                    Project description goes here...
+                </div>
+                <div class="modal-tech-title">Technologies Used</div>
+                <div id="modalTech" class="project-tech">
+                    <!-- Tech tags will be inserted here -->
+                </div>
+                <div style="margin-top: 2rem;">
+                    <button class="btn btn-outline" style="width: 100%;" onclick="closeProjectModal()">Close</button>
+                </div>
+            </div>
+        </div>
 
         <!-- Contact Section -->
         <section id="contact" class="section container fade-in">
@@ -613,8 +776,40 @@
         </div>
     </footer>
 
-    <!-- Intersection Observer for Fade-In Animation -->
+    <!-- Intersection Observer and Modal Logic -->
     <script>
+        // Modal Logic
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalTech = document.getElementById('modalTech');
+
+        function openProjectModal(title, description, tech) {
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            
+            // Clear and populate tech tags
+            modalTech.innerHTML = '';
+            tech.split(',').forEach(t => {
+                const span = document.createElement('span');
+                span.textContent = t.trim();
+                modalTech.appendChild(span);
+            });
+
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeProjectModal() {
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        // Close on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProjectModal();
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
                 root: null,
