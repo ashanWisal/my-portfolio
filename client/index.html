@@ -1,1040 +1,1229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahsan Wisal - Full Stack Web Developer</title>
-    
+
     <!-- Meta Tags -->
     <meta property="og:title" content="Ahsan Wisal - Portfolio" />
-    <meta property="og:description" content="Portfolio of Ahsan Wisal, a Full Stack Web Developer with 2 years of experience building modern web apps." />
+    <meta
+      property="og:description"
+      content="Portfolio of Ahsan Wisal, a Full Stack Web Developer with 2 years of experience building modern web apps."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://replit.com/public/images/opengraph.png" />
+    <meta
+      property="og:image"
+      content="https://replit.com/public/images/opengraph.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ahsan Wisal - Portfolio" />
-    <meta name="twitter:description" content="Portfolio of Ahsan Wisal, a Full Stack Web Developer with 2 years of experience." />
-    <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Ahsan Wisal, a Full Stack Web Developer with 2 years of experience."
+    />
+    <meta
+      name="twitter:image"
+      content="https://replit.com/public/images/opengraph.png"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        :root {
-            /* Color Palette */
-            --bg-color: #0f0f0f;
-            --surface-color: #1a1a1a;
-            --surface-hover: #222222;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-color: #3b82f6; /* Blue Accent */
-            --accent-hover: #2563eb;
-            --accent-glow: rgba(59, 130, 246, 0.15);
-            --border-color: #262626;
-        }
+      :root {
+        /* Color Palette */
+        --bg-color: #0f0f0f;
+        --surface-color: #1a1a1a;
+        --surface-hover: #222222;
+        --text-main: #f3f4f6;
+        --text-muted: #9ca3af;
+        --accent-color: #3b82f6; /* Blue Accent */
+        --accent-hover: #2563eb;
+        --accent-glow: rgba(59, 130, 246, 0.15);
+        --border-color: #262626;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-        /* Smooth scroll is applied on html tag */
-        html {
-            scroll-behavior: smooth;
-        }
+      /* Smooth scroll is applied on html tag */
+      html {
+        scroll-behavior: smooth;
+      }
 
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 600;
-            line-height: 1.2;
-            color: #ffffff;
-        }
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        font-weight: 600;
+        line-height: 1.2;
+        color: #ffffff;
+      }
 
-        h1 { font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
-        h2 { font-size: 2.25rem; margin-bottom: 2.5rem; position: relative; display: inline-block; letter-spacing: -0.01em; }
-        h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-        p { color: var(--text-muted); }
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+        position: relative;
+        display: inline-block;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: var(--text-muted);
+      }
 
-        /* Utilities */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+      /* Utilities */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-        .section {
-            padding: 8rem 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+      .section {
+        padding: 8rem 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid transparent;
-            font-size: 0.95rem;
-        }
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+        font-size: 0.95rem;
+      }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-            box-shadow: 0 4px 14px var(--accent-glow);
-        }
+      .btn-primary {
+        background-color: var(--accent-color);
+        color: white;
+        box-shadow: 0 4px 14px var(--accent-glow);
+      }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
-        }
+      .btn-primary:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+      }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border-color: var(--border-color);
-        }
+      .btn-outline {
+        background-color: transparent;
+        color: var(--text-main);
+        border-color: var(--border-color);
+      }
 
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: var(--surface-color);
-            transform: translateY(-2px);
-        }
+      .btn-outline:hover {
+        border-color: var(--text-main);
+        background-color: var(--surface-color);
+        transform: translateY(-2px);
+      }
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.25rem 0;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.25rem 0;
+        background: rgba(15, 15, 15, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
 
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: -0.025em;
-        }
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-main);
+        letter-spacing: -0.025em;
+      }
 
-        .logo span {
-            color: var(--accent-color);
-        }
+      .logo span {
+        color: var(--accent-color);
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
 
-        .nav-links a:hover {
-            color: var(--text-main);
-        }
+      .nav-links a:hover {
+        color: var(--text-main);
+      }
 
-        /* Hero */
+      /* Hero */
+      #home {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding-top: 8rem;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero-subtitle {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+
+      .hero-desc {
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+        max-width: 480px;
+        color: #d1d5db;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .hero-image-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+      }
+
+      .hero-image-wrapper::before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.15;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #profile-photo {
+        width: 380px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 2rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+      }
+
+      #profile-photo:hover {
+        transform: scale(1.02) translateY(-10px);
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.15);
+      }
+
+      /* About */
+      #about p {
+        font-size: 1.15rem;
+        max-width: 800px;
+        margin-bottom: 1.5rem;
+        color: #d1d5db;
+      }
+
+      /* Skills */
+      .skills-group {
+        margin-bottom: 3rem;
+      }
+
+      .skills-category {
+        font-size: 1.1rem;
+        color: #ffffff;
+        margin-bottom: 1.25rem;
+        font-weight: 500;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+
+      .skill-chip {
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        padding: 0.6rem 1.2rem;
+        border-radius: 2rem;
+        font-size: 0.9rem;
+        color: #e5e7eb;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .skill-chip:hover {
+        border-color: var(--accent-color);
+        background-color: rgba(59, 130, 246, 0.05);
+        transform: translateY(-2px);
+        color: #ffffff;
+      }
+
+      /* Experience Section */
+      .experience-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 2rem;
+      }
+
+      .experience-timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--border-color);
+      }
+
+      .experience-item {
+        position: relative;
+        margin-bottom: 3.5rem;
+      }
+
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: -2.35rem;
+        top: 0.5rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--bg-color);
+        border: 2px solid var(--accent-color);
+        z-index: 1;
+      }
+
+      .experience-card {
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .experience-card:hover {
+        border-color: rgba(59, 130, 246, 0.3);
+        transform: translateX(10px);
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .experience-company {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .experience-duration {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .experience-role-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .experience-role {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--accent-color);
+      }
+
+      .badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 0.25rem 0.75rem;
+        border-radius: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .badge-green {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+      }
+
+      .badge-blue {
+        background: rgba(59, 130, 246, 0.1);
+        color: #3b82f6;
+      }
+
+      .experience-location {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .experience-desc {
+        font-size: 0.95rem;
+        color: #d1d5db;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .experience-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .experience-tech span {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.25rem;
+      }
+
+      h2.with-underline::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--accent-color);
+        margin-top: 0.75rem;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .project-card {
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .project-card:hover {
+        border-color: rgba(59, 130, 246, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+      }
+
+      .project-image-placeholder {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .project-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+      .project-image-placeholder::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+      }
+
+      .project-info {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .project-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        gap: 0.3rem;
+      }
+
+      .project-role {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-color);
+        background: var(--accent-glow);
+        padding: 0.25rem 0.75rem;
+        border-radius: 2rem;
+        white-space: nowrap;
+        flex-shrink: 0; 
+      }
+
+      .project-title {
+        color: #ffffff;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+         min-width: 0;      /* ADD THIS */
+  flex: 1;     
+      }
+
+      .project-desc {
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        margin-top: auto;
+      }
+
+      .project-tech span {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #d1d5db;
+        background-color: #262626;
+        padding: 0.35rem 0.85rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .project-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Modal */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal-overlay.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 1.5rem;
+        max-width: 600px;
+        width: 100%;
+        padding: 3rem;
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-overlay.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .modal-close:hover {
+        color: #ffffff;
+      }
+
+      .modal-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+      }
+
+      .modal-description {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .modal-tech-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      /* Contact */
+      #contact {
+        text-align: center;
+        align-items: center;
+        min-height: 80vh;
+      }
+
+      .contact-email {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        text-decoration: none;
+        margin: 2.5rem 0;
+        display: inline-block;
+        transition: all 0.3s ease;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-email:hover {
+        color: var(--accent-color);
+        transform: scale(1.02);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .social-links a {
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+      }
+
+      .social-links a:hover {
+        color: #ffffff;
+        border-color: var(--accent-color);
+        background-color: var(--accent-glow);
+        transform: translateY(-4px);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2.5rem 0;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
         #home {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
-            padding-top: 8rem;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-subtitle {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .hero-desc {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            max-width: 480px;
-            color: #d1d5db;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
+          flex-direction: column-reverse;
+          text-align: center;
+          padding-top: 8rem;
+          gap: 3rem;
         }
 
         .hero-image-wrapper {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
+          justify-content: center;
         }
 
-        .hero-image-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            z-index: -1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .hero-desc {
+          margin: 0 auto 2.5rem auto;
+        }
+
+        h1 {
+          font-size: 2.75rem;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .section {
+          padding: 5rem 0;
+          min-height: auto;
         }
 
         #profile-photo {
-            width: 380px;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 2rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-            transition: all 0.5s ease;
+          width: 300px;
+          height: 300px;
         }
-
-        #profile-photo:hover {
-            transform: scale(1.02) translateY(-10px);
-            border-color: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.15);
-        }
-
-        /* About */
-        #about p {
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin-bottom: 1.5rem;
-            color: #d1d5db;
-        }
-
-        /* Skills */
-        .skills-group {
-            margin-bottom: 3rem;
-        }
-
-        .skills-category {
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-bottom: 1.25rem;
-            font-weight: 500;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-        }
-
-        .skill-chip {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            color: #e5e7eb;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .skill-chip:hover {
-            border-color: var(--accent-color);
-            background-color: rgba(59, 130, 246, 0.05);
-            transform: translateY(-2px);
-            color: #ffffff;
-        }
-
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-left: 2rem;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 3.5rem;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -2.35rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--bg-color);
-            border: 2px solid var(--accent-color);
-            z-index: 1;
-        }
-
-        .experience-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .experience-card:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            transform: translateX(10px);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .experience-company {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .experience-duration {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .experience-role-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .experience-role {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .badge-green {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-        }
-
-        .badge-blue {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-        }
-
-        .experience-location {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .experience-desc {
-            font-size: 0.95rem;
-            color: #d1d5db;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .experience-tech span {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.25rem 0.6rem;
-            border-radius: 0.25rem;
-        }
-
-        h2.with-underline::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--accent-color);
-            margin-top: 0.75rem;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 1.25rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
-        }
-
-        .project-image-placeholder {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background-color: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            position: relative;
-        }
-
-        .project-image-placeholder::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%);
-        }
-
-        .project-info {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-
-        .project-role {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-color);
-            background: var(--accent-glow);
-            padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            white-space: nowrap;
-        }
-
-        .project-title {
-            color: #ffffff;
-            margin-bottom: 0;
-            font-size: 1.5rem;
-        }
-
-        .project-desc {
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            margin-top: auto;
-        }
-
-        .project-tech span {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #d1d5db;
-            background-color: #262626;
-            padding: 0.35rem 0.85rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .project-btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Modal */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            max-width: 600px;
-            width: 100%;
-            padding: 3rem;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            color: #ffffff;
-        }
-
-        .modal-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-        }
-
-        .modal-description {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        .modal-tech-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        body.modal-open {
-            overflow: hidden;
-        }
-
-        /* Contact */
-        #contact {
-            text-align: center;
-            align-items: center;
-            min-height: 80vh;
-        }
-
-        .contact-email {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ffffff;
-            text-decoration: none;
-            margin: 2.5rem 0;
-            display: inline-block;
-            transition: all 0.3s ease;
-            letter-spacing: -0.02em;
-        }
-
-        .contact-email:hover {
-            color: var(--accent-color);
-            transform: scale(1.02);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-        }
-
-        .social-links a:hover {
-            color: #ffffff;
-            border-color: var(--accent-color);
-            background-color: var(--accent-glow);
-            transform: translateY(-4px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            #home {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 8rem;
-                gap: 3rem;
-            }
-
-            .hero-image-wrapper {
-                justify-content: center;
-            }
-
-            .hero-desc {
-                margin: 0 auto 2.5rem auto;
-            }
-
-            h1 { font-size: 2.75rem; }
-            
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .section {
-                padding: 5rem 0;
-                min-height: auto;
-            }
-
-            #profile-photo {
-                width: 300px;
-                height: 300px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <a href="#home" class="logo">Ahsan<span>Wisal</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="#home" class="logo">Ahsan<span>Wisal</span></a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="section container fade-in">
-            <div class="hero-content">
-                <span class="hero-subtitle">Full Stack Web Developer</span>
-                <h1>Hi, I'm Ahsan Wisal</h1>
-                <p class="hero-desc">2 Years of Experience | Building modern web apps. I specialize in crafting digital experiences that are clean, scalable, and beautifully designed.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
+      <!-- Hero Section -->
+      <section id="home" class="section container fade-in">
+        <div class="hero-content">
+          <span class="hero-subtitle">Full Stack Web Developer</span>
+          <h1>Hi, I'm Ahsan Wisal</h1>
+          <p class="hero-desc">
+            2 Years of Experience | Building modern web apps. I specialize in
+            crafting digital experiences that are clean, scalable, and
+            beautifully designed.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            id="profile-photo"
+            src="/profile.png"
+            alt="Ahsan Wisal Profile Photo"
+          />
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section container fade-in">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate full stack developer who loves turning complex
+          problems into simple, beautiful, and intuitive interfaces.
+        </p>
+        <p>
+          Over the past 2 years, I've dedicated myself to building scalable web
+          applications with modern technologies. I focus on writing clean,
+          maintainable code and building responsive, user-friendly
+          architectures.
+        </p>
+        <p>
+          When I'm not coding, I'm exploring new web technologies, refining my
+          design skills, and staying up to date with industry trends.
+        </p>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section container fade-in">
+        <h2 class="with-underline">Experience</h2>
+        <div class="experience-timeline">
+          <!-- Experience Item 1 -->
+          <div class="experience-item">
+            <div class="experience-card">
+              <div class="experience-header">
+                <span class="experience-company">CodeUpScale</span>
+                <span class="experience-duration">2024 - Present</span>
+              </div>
+              <div class="experience-role-info">
+                <span class="experience-role">Full Stack Developer</span>
+                <span class="badge badge-green">Full Time</span>
+              </div>
+              <p class="experience-desc">
+                Working on full stack web applications, contributing to both
+                frontend and backend development using modern technologies.
+              </p>
+              <div class="experience-tech">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>NestJS</span>
+                <span>MongoDB</span>
+                <span>Next.js</span>
+              </div>
             </div>
-            <div class="hero-image-wrapper">
-                <img id="profile-photo" src="/profile.png" alt="Ahsan Wisal Profile Photo">
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="experience-item">
+            <div class="experience-card">
+              <div class="experience-header">
+                <span class="experience-company">4 Dot Solutions</span>
+                <span class="experience-duration">2023 - 2024</span>
+              </div>
+              <div class="experience-role-info">
+                <span class="experience-role">Frontend Developer Intern</span>
+                <span class="badge badge-blue">Internship</span>
+              </div>
+              <span class="experience-location">Lahore, Pakistan (Remote)</span>
+              <p class="experience-desc">
+                Worked remotely on frontend development tasks, building UI
+                components and improving user experience for web applications.
+              </p>
+              <div class="experience-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- About Section -->
-        <section id="about" class="section container fade-in">
-            <h2>About Me</h2>
-            <p>I am a passionate full stack developer who loves turning complex problems into simple, beautiful, and intuitive interfaces.</p>
-            <p>Over the past 2 years, I've dedicated myself to building scalable web applications with modern technologies. I focus on writing clean, maintainable code and building responsive, user-friendly architectures.</p>
-            <p>When I'm not coding, I'm exploring new web technologies, refining my design skills, and staying up to date with industry trends.</p>
-        </section>
+      <!-- Skills Section -->
+      <section id="skills" class="section container fade-in">
+        <h2>Skills</h2>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section container fade-in">
-            <h2 class="with-underline">Experience</h2>
-            <div class="experience-timeline">
-                
-                <!-- Experience Item 1 -->
-                <div class="experience-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <span class="experience-company">CodeUpScale</span>
-                            <span class="experience-duration">2024 - Present</span>
-                        </div>
-                        <div class="experience-role-info">
-                            <span class="experience-role">Full Stack Developer</span>
-                            <span class="badge badge-green">Full Time</span>
-                        </div>
-                        <p class="experience-desc">Working on full stack web applications, contributing to both frontend and backend development using modern technologies.</p>
-                        <div class="experience-tech">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>NestJS</span>
-                            <span>MongoDB</span>
-                            <span>Next.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 -->
-                <div class="experience-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <span class="experience-company">4 Dot Solutions</span>
-                            <span class="experience-duration">2023 - 2024</span>
-                        </div>
-                        <div class="experience-role-info">
-                            <span class="experience-role">Frontend Developer Intern</span>
-                            <span class="badge badge-blue">Internship</span>
-                        </div>
-                        <span class="experience-location">Lahore, Pakistan (Remote)</span>
-                        <p class="experience-desc">Worked remotely on frontend development tasks, building UI components and improving user experience for web applications.</p>
-                        <div class="experience-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section container fade-in">
-            <h2>Skills</h2>
-            
-            <div class="skills-group">
-                <div class="skills-category">Frontend</div>
-                <div class="skills-list">
-                    <span class="skill-chip">HTML</span>
-                    <span class="skill-chip">CSS</span>
-                    <span class="skill-chip">JavaScript</span>
-                    <span class="skill-chip">TypeScript</span>
-                    <span class="skill-chip">React</span>
-                    <span class="skill-chip">Next.js</span>
-                    <span class="skill-chip">Tailwind CSS</span>
-                    <span class="skill-chip">Material UI</span>
-                    <span class="skill-chip">shadcn/ui</span>
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <div class="skills-category">Backend</div>
-                <div class="skills-list">
-                    <span class="skill-chip">Node.js</span>
-                    <span class="skill-chip">NestJS</span>
-                    <span class="skill-chip">MongoDB</span>
-                    <span class="skill-chip">MySQL</span>
-                </div>
-            </div>
-
-            <div class="skills-group">
-                <div class="skills-category">Deployment</div>
-                <div class="skills-list">
-                    <span class="skill-chip">Vercel</span>
-                    <span class="skill-chip">Netlify</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section container fade-in">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div class="project-image-placeholder">Project Screenshot</div>
-                    <div class="project-info">
-                        <div class="project-header">
-                            <h3 class="project-title">AutyClaud</h3>
-                            <span class="project-role">Full Stack Developer</span>
-                        </div>
-                        <p class="project-desc">A modern web application built for managing and automating cloud-based workflows with an intuitive admin interface.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <button class="btn btn-primary project-btn" onclick="openProjectModal('AutyClaud', 'A modern web application built for managing and automating cloud-based workflows with an intuitive admin interface. This platform enables users to streamline their cloud operations, monitor performance metrics, and automate repetitive tasks through a sophisticated yet user-friendly dashboard environment.', 'React, TypeScript, Node.js, MongoDB, Tailwind CSS')">View Details</button>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-placeholder">Project Screenshot</div>
-                    <div class="project-info">
-                        <div class="project-header">
-                            <h3 class="project-title">Stratum-X</h3>
-                            <span class="project-role">Frontend Developer</span>
-                        </div>
-                        <p class="project-desc">A data-driven admin panel designed for real-time monitoring, analytics, and user management at scale.</p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>TypeScript</span>
-                            <span>NestJS</span>
-                            <span>MySQL</span>
-                            <span>Material UI</span>
-                        </div>
-                        <button class="btn btn-primary project-btn" onclick="openProjectModal('Stratum-X', 'A data-driven admin panel designed for real-time monitoring, analytics, and user management at scale. The application features high-performance data visualizations, complex filtering systems, and a responsive interface tailored for data analysts and system administrators.', 'Next.js, TypeScript, NestJS, MySQL, Material UI')">View Details</button>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-placeholder">Project Screenshot</div>
-                    <div class="project-info">
-                        <div class="project-header">
-                            <h3 class="project-title">CodeUpScale</h3>
-                            <span class="project-role">Full Stack Developer</span>
-                        </div>
-                        <p class="project-desc">A developer-focused platform for code collaboration, project tracking, and scalable application deployment.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Tailwind CSS</span>
-                            <span>Vercel</span>
-                        </div>
-                        <button class="btn btn-primary project-btn" onclick="openProjectModal('CodeUpScale', 'A developer-focused platform for code collaboration, project tracking, and scalable application deployment. It provides a unified workspace for teams to coordinate efforts, manage version control integration, and automate their deployment pipelines with confidence.', 'React, Node.js, MongoDB, Tailwind CSS, Vercel')">View Details</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Project Modal -->
-        <div id="projectModal" class="modal-overlay">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeProjectModal()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-                <h3 id="modalTitle" class="modal-title">Project Title</h3>
-                <div id="modalDescription" class="modal-description">
-                    Project description goes here...
-                </div>
-                <div class="modal-tech-title">Technologies Used</div>
-                <div id="modalTech" class="project-tech">
-                    <!-- Tech tags will be inserted here -->
-                </div>
-                <div style="margin-top: 2rem;">
-                    <button class="btn btn-outline" style="width: 100%;" onclick="closeProjectModal()">Close</button>
-                </div>
-            </div>
+        <div class="skills-group">
+          <div class="skills-category">Frontend</div>
+          <div class="skills-list">
+              <span class="skill-chip">React</span>
+            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">Next.js</span>
+            <span class="skill-chip">Tailwind CSS</span>
+            <span class="skill-chip">Material UI</span>
+            <span class="skill-chip">shadcn/ui</span>
+          </div>
         </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section container fade-in">
-            <h2>Let's Connect</h2>
-            <p>I'm currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            
-            <a href="mailto:hello@ahsanwisal.com" class="contact-email">hello@ahsanwisal.com</a>
-            
-            <div class="social-links">
-                <!-- GitHub Icon -->
-                <a href="#" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </a>
-                <!-- LinkedIn Icon -->
-                <a href="#" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
+        <div class="skills-group">
+          <div class="skills-category">Backend</div>
+          <div class="skills-list">
+            <span class="skill-chip">Node.js</span>
+            <span class="skill-chip">NestJS</span>
+            <span class="skill-chip">Express.js</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-category">Databases</div>
+          <div class="skills-list">
+            <span class="skill-chip">MongoDB</span>
+            <span class="skill-chip">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-category">Deployment</div>
+          <div class="skills-list">
+            <span class="skill-chip">Vercel</span>
+            <span class="skill-chip">Netlify</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section container fade-in">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image-placeholder">
+                <img src="/autycloud.png" alt="">
             </div>
-        </section>
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-title">AutyClaud</h3>
+                <span class="project-role">Full Stack Developer</span>
+              </div>
+              <p class="project-desc">
+                A modern web application built for managing and automating
+                cloud-based workflows with an intuitive admin interface.
+              </p>
+              <div class="project-tech">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>PHP</span>
+                <span>Laravell</span>
+                <span>Tailwind CSS</span>
+                <span>MySQL</span>
+
+              </div>
+              <button
+                class="btn btn-primary project-btn"
+                onclick="openProjectModal(
+  'AutyClaud',
+  'AutyCloud is a smart car rental management and CRM platform.Its an all-in-one vehicle rental system that helps rental businesses manage their fleet and operations digitally covering bookings, fleet monitoring, and customer management. It targets businesses in Australia, the USA, and Dubai.',
+  'Nextjs, TypeScript, Php, Laravell, Redux, Tailwind CSS, MySQL',
+  '/autycloud.png'
+)"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image-placeholder">
+                <img src="/codeupscale.png" alt="">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-title">Stratum-X</h3>
+                <span class="project-role">Frontend Developer</span>
+              </div>
+              <p class="project-desc">
+                A data-driven admin panel designed for real-time monitoring,
+                analytics, and user management at scale.
+              </p>
+              <div class="project-tech">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>NestJS</span>
+                <span>MongoDB</span>
+                <span>Material UI</span>
+              </div>
+              <button
+                class="btn btn-primary project-btn"
+                onclick="openProjectModal(
+  'Stratum-X',
+  'A logistics operations admin panel built for Cervello Global, a US defense contractor, featuring real-time data monitoring, analytics, and fleet/supply chain management.',
+  'React, TypeScript, NestJS, MongoDB, Material UI, Redux, Jwt,',
+  '/codeupscale.png'
+)"
+
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image-placeholder">
+            <img src="/Stratum-X.png" alt="">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-title">CodeUpScale</h3>
+                <span class="project-role">Full Stack Developer</span>
+              </div>
+              <p class="project-desc">
+                A developer-focused platform for code collaboration, project
+                tracking, and scalable application deployment.
+              </p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>Tailwind CSS</span>
+                <span>Vercel</span>
+              </div>
+              <button
+                class="btn btn-primary project-btn"
+                onclick="openProjectModal(
+  'CodeUpScale',
+  'CodeUpScale is a custom software and AI/LLM development agency targeting enterprise clients. They offer services including app development, web development, UI/UX, Salesforce solutions, AI/ML, DevOps, Microsoft, Power Platform, and e-commerce development. They operate on three engagement models — fixed price, dedicated hire, and on-site. They have offices in New York, Birmingham UK, and Lahore Pakistan.',
+  'React, Node.js, MySQL, NestJS, MUI, Tailwind CSS, Node Mailer',
+  '/Stratum-X.png'
+)"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Modal -->
+      <div id="projectModal" class="modal-overlay">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeProjectModal()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+            <div id="modalImage" style="width:100%;aspect-ratio:16/9;border-radius:0.75rem;overflow:hidden;margin-bottom:1.5rem;border:1px solid var(--border-color);display:none;">
+    <img id="modalImg" src="/autycloud.png" alt="" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+          <h3 id="modalTitle" class="modal-title">Project Title</h3>
+          <div id="modalDescription" class="modal-description">
+            Project description goes here...
+          </div>
+          <div class="modal-tech-title">Technologies Used</div>
+          <div id="modalTech" class="project-tech">
+            <!-- Tech tags will be inserted here -->
+          </div>
+          <div style="margin-top: 2rem">
+            <button
+              class="btn btn-outline"
+              style="width: 100%"
+              onclick="closeProjectModal()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section container fade-in">
+        <h2>Let's Connect</h2>
+        <p>
+          I'm currently open for new opportunities. Whether you have a question
+          or just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <a href="mailto:hello@ahsanwisal.com" class="contact-email"
+          >ashanwisal08@gmail.com</a
+        >
+
+        <div class="social-links">
+          <!-- GitHub Icon -->
+          <a href="https://github.com/ashanWisal" aria-label="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/ashan-wisal-63a43232b" aria-label="LinkedIn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>Built by Ahsan Wisal &copy; 2025</p>
-        </div>
+      <div class="container">
+        <p>Built by Ahsan Wisal &copy; 2025</p>
+      </div>
     </footer>
 
     <!-- Intersection Observer and Modal Logic -->
     <script>
-        // Modal Logic
-        const modal = document.getElementById('projectModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalTech = document.getElementById('modalTech');
+      // Modal Logic
+      const modal = document.getElementById("projectModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalTech = document.getElementById("modalTech");
 
-        function openProjectModal(title, description, tech) {
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            
-            // Clear and populate tech tags
-            modalTech.innerHTML = '';
-            tech.split(',').forEach(t => {
-                const span = document.createElement('span');
-                span.textContent = t.trim();
-                modalTech.appendChild(span);
-            });
+function openProjectModal(title, description, tech, imgSrc) {
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
 
-            modal.classList.add('active');
-            document.body.classList.add('modal-open');
-        }
+  // Handle image
+  const modalImageWrapper = document.getElementById('modalImage');
+  const modalImg = document.getElementById('modalImg');
+  if (imgSrc) {
+    modalImg.src = imgSrc;
+    modalImageWrapper.style.display = 'block';
+  } else {
+    modalImageWrapper.style.display = 'none';
+  }
 
-        function closeProjectModal() {
-            modal.classList.remove('active');
-            document.body.classList.remove('modal-open');
-        }
+  modalTech.innerHTML = "";
+  tech.split(",").forEach((t) => {
+    const span = document.createElement("span");
+    span.textContent = t.trim();
+    modalTech.appendChild(span);
+  });
 
-        // Close on overlay click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeProjectModal();
+  modal.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+      function closeProjectModal() {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+
+      // Close on overlay click
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeProjectModal();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.15,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll(".fade-in");
+        fadeElements.forEach((el) => observer.observe(el));
+
+        // Navbar background opacity on scroll
+        const navbar = document.querySelector(".navbar");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.style.background = "rgba(15, 15, 15, 0.95)";
+            navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.5)";
+          } else {
+            navbar.style.background = "rgba(15, 15, 15, 0.8)";
+            navbar.style.boxShadow = "none";
+          }
         });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(el => observer.observe(el));
-            
-            // Navbar background opacity on scroll
-            const navbar = document.querySelector('.navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.style.background = 'rgba(15, 15, 15, 0.95)';
-                    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
-                } else {
-                    navbar.style.background = 'rgba(15, 15, 15, 0.8)';
-                    navbar.style.boxShadow = 'none';
-                }
-            });
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
